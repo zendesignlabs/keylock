@@ -188,7 +188,7 @@ struct ContentView: View {
     }
 
     private var statusLine: some View {
-        Text(locker.duration == 0 ? "Locks until you tap again" : "Auto-unlocks when time is up")
+        Text(locker.duration == 0 ? "Locks until you click again" : "Auto-unlocks when time is up")
             .font(.system(size: 11, weight: .medium, design: .rounded))
             .foregroundStyle(.white.opacity(0.35))
     }
