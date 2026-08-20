@@ -46,14 +46,20 @@ struct ContentView: View {
     private var background: some View {
         ZStack {
             Color(red: 0.07, green: 0.08, blue: 0.10)
+            // Crossfade two fixed-color washes; gradient colors themselves
+            // don't interpolate, opacity does.
             RadialGradient(
-                colors: [
-                    (locker.isLocked ? Color.orange : Color.teal).opacity(0.16),
-                    .clear
-                ],
+                colors: [Color.teal.opacity(0.16), .clear],
                 center: .center, startRadius: 20, endRadius: 320
             )
+            .opacity(locker.isLocked ? 0 : 1)
+            RadialGradient(
+                colors: [Color.orange.opacity(0.16), .clear],
+                center: .center, startRadius: 20, endRadius: 320
+            )
+            .opacity(locker.isLocked ? 1 : 0)
         }
+        .animation(.easeInOut(duration: 0.6), value: locker.isLocked)
         .ignoresSafeArea()
     }
 
@@ -71,31 +77,31 @@ struct ContentView: View {
     private var lockButton: some View {
         Button(action: { locker.toggle() }) {
             ZStack {
-                // Outer glow
-                Circle()
-                    .fill((locker.isLocked ? Color.orange : Color.teal).opacity(pulse ? 0.20 : 0.08))
-                    .frame(width: 190, height: 190)
-                    .blur(radius: 24)
+                // Outer glow: crossfaded color layers so the hue blends
+                ZStack {
+                    Circle().fill(Color.teal)
+                        .opacity(locker.isLocked ? 0 : 1)
+                    Circle().fill(Color.orange)
+                        .opacity(locker.isLocked ? 1 : 0)
+                }
+                .frame(width: 190, height: 190)
+                .blur(radius: 24)
+                .opacity(pulse ? 0.20 : 0.08)
+                .animation(.easeInOut(duration: 0.6), value: locker.isLocked)
 
                 // Track ring
                 Circle()
                     .stroke(Color.white.opacity(0.08), lineWidth: 6)
                     .frame(width: 160, height: 160)
 
-                // Progress / state ring
-                Circle()
-                    .trim(from: 0, to: ringProgress)
-                    .stroke(
-                        AngularGradient(
-                            colors: locker.isLocked
-                                ? [.orange, .pink, .orange]
-                                : [.teal, .mint, .teal],
-                            center: .center
-                        ),
-                        style: StrokeStyle(lineWidth: 6, lineCap: .round)
-                    )
-                    .frame(width: 160, height: 160)
-                    .rotationEffect(.degrees(-90))
+                // Progress / state ring: two gradient layers crossfaded
+                ZStack {
+                    ringLayer(colors: [.teal, .mint, .teal])
+                        .opacity(locker.isLocked ? 0 : 1)
+                    ringLayer(colors: [.orange, .pink, .orange])
+                        .opacity(locker.isLocked ? 1 : 0)
+                }
+                .animation(.easeInOut(duration: 0.6), value: locker.isLocked)
 
                 // Face
                 Circle()
@@ -113,6 +119,7 @@ struct ContentView: View {
                         .font(.system(size: 34, weight: .medium))
                         .foregroundStyle(locker.isLocked ? Color.orange : Color.teal)
                         .contentTransition(.symbolEffect(.replace))
+                        .animation(.easeInOut(duration: 0.6), value: locker.isLocked)
                     Text(centerLabel)
                         .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .monospacedDigit()
@@ -128,6 +135,17 @@ struct ContentView: View {
                 pulse = true
             }
         }
+    }
+
+    private func ringLayer(colors: [Color]) -> some View {
+        Circle()
+            .trim(from: 0, to: ringProgress)
+            .stroke(
+                AngularGradient(colors: colors, center: .center),
+                style: StrokeStyle(lineWidth: 6, lineCap: .round)
+            )
+            .frame(width: 160, height: 160)
+            .rotationEffect(.degrees(-90))
     }
 
     private var ringProgress: CGFloat {
