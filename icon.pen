@@ -1,0 +1,307 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "rectangle",
+      "id": "pmn1v",
+      "x": -2020,
+      "y": -537,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "images/icon-1024.png",
+        "mode": "fill"
+      },
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "type": "frame",
+      "id": "k056D",
+      "x": 1035,
+      "y": -602,
+      "name": "SVG Keyboard Icon",
+      "clip": true,
+      "width": 1365,
+      "height": 1360,
+      "layout": "none",
+      "children": [
+        {
+          "type": "path",
+          "id": "pJ8Yf",
+          "x": 241.7311500964745,
+          "y": 252.7697,
+          "name": "Inner Control Disk",
+          "geometry": "M676.5462 0c-346.04138 0-676.5462 281.0704-676.5462 673.72144 0 324.85522 247.17242 672.30896 676.5462 672.30896 367.2277 0 673.7214-269.771 673.7214-669.48414 0-399.71322-292.3697-676.54626-673.7214-676.54626z",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#2B3B3E",
+                "position": 0
+              },
+              {
+                "color": "#10171C",
+                "position": 1
+              }
+            ]
+          },
+          "width": 920,
+          "height": 920,
+          "stroke": "#344A4C",
+          "strokeWidth": 12
+        },
+        {
+          "type": "path",
+          "id": "NyPMd",
+          "x": 16,
+          "y": 32,
+          "name": "Rounded Square Background",
+          "geometry": "M1453.3738 1813.5393l-1086.1462 0c-192.08829 0-367.2276-151.1283-367.2276-362.9903l0-1088.97106c0-173.7269 151.1283-361.57794 367.2276-361.57794l1084.7338 0c194.9132 0 368.64 162.42758 368.64 365.81519l0 1087.55861c0 224.5737-153.9531 360.1655-367.2276 360.1655z",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#1D212A",
+                "position": 0
+              },
+              {
+                "color": "#0B0E13",
+                "position": 1
+              }
+            ]
+          },
+          "width": 1327,
+          "height": 1322
+        },
+        {
+          "type": "path",
+          "id": "d2cx9C",
+          "x": 139.19780409647456,
+          "y": 154.40864599999992,
+          "name": "Aqua Control Ring",
+          "geometry": "M676.5462 0c-351.69104 0-676.5462 286.71997-676.5462 675.13379 0 323.44275 255.64691 670.89651 676.5462 670.89651 374.2897 0 673.7214-276.833 673.7214-663.8345 0-387.00134-282.4827-682.1958-673.7214-682.1958z m0 1180.778c-278.24554 0-502.81927-214.68694-502.81927-498.5822 0-283.89508 225.9862-507.05652 502.81927-507.05652 272.59583 0 504.2316 223.16144 504.2316 499.99451 0 182.20142-121.4675 505.64421-504.2316 505.64421z",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#83F3CC",
+                "position": 0
+              },
+              {
+                "color": "#2DD4C5",
+                "position": 1
+              }
+            ]
+          },
+          "width": 1120.7220249999998,
+          "height": 1117.205149
+        },
+        {
+          "type": "path",
+          "id": "PvGod",
+          "x": 474.4765530964744,
+          "y": 601.505586,
+          "name": "Keyboard Outline",
+          "geometry": "M505.644 0l-466.096 0c-15.537 0-39.548 16.949-39.548 39.547l1.412 221.75c0 22.598 24.011 40.96 39.548 39.547l464.684 1.412c22.599 0.001 38.135-21.186 38.135-43.784l0-218.925c0-18.361-16.949-39.547-38.135-39.547l0 0z",
+          "width": 451,
+          "height": 240,
+          "stroke": "#4bdec0",
+          "strokeWidth": 30,
+          "strokeAlignment": "outer",
+          "strokeLinejoin": "round",
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "path",
+          "id": "K7CYC",
+          "x": 575.2946610964746,
+          "y": 758.8679219999999,
+          "name": "Space Bar",
+          "geometry": "M295.19446 0l-286.71997 0c-8.47449 0-8.47449 2.82483-8.47449 7.06201l0 24.01099c0 5.64978 2.82483 5.64978 8.47449 5.64978l286.71997 0c5.64966 0 7.06213-1.41248 7.06213-7.06201l0-24.01111c0-2.82483-1.41247-5.64966-7.06213-5.64966z",
+          "fillRule": "evenodd",
+          "viewBox": [
+            -0.00000286102294921875,
+            -0.0000019073486328125,
+            302.25659465789795,
+            36.72278022766113
+          ],
+          "fill": "#4BDEC0",
+          "width": 251,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "oXdQJ",
+          "x": 510.7311500964745,
+          "y": 758.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "U2Eh3",
+          "x": 510.7311500964745,
+          "y": 698.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "HguSC",
+          "x": 510.7311500964745,
+          "y": 638.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "aSAj6",
+          "x": 844.7311500964745,
+          "y": 758.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "frame",
+          "id": "etstW",
+          "x": 575.7311500964745,
+          "y": 638.7697000000001,
+          "name": "Frame 1",
+          "gap": 26,
+          "children": [
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "Xhj8D",
+              "fill": "#4bdec0",
+              "width": 41,
+              "height": 41
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "galuZ",
+              "fill": "#4bdec0",
+              "width": 41,
+              "height": 41
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "Yd0YW",
+              "fill": "#4bdec0",
+              "width": 41,
+              "height": 41
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "t0jOC0",
+              "fill": "#4bdec0",
+              "width": 41,
+              "height": 41
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "WpQiI",
+              "fill": "#4bdec0",
+              "width": 41,
+              "height": 41
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "DXdFd",
+          "x": 575.7311500964745,
+          "y": 694.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "k5rj3i",
+          "x": 642.7311500964745,
+          "y": 694.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "FAIhf",
+          "x": 709.7311500964745,
+          "y": 694.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "M2owN",
+          "x": 776.7311500964745,
+          "y": 694.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "shUqV",
+          "x": 843.7311500964745,
+          "y": 694.7697000000001,
+          "fill": "#4bdec0",
+          "width": 41,
+          "height": 41
+        }
+      ]
+    }
+  ],
+  "fileToken": "a8031887-8777-46c7-8ecc-edc465938566"
+}
