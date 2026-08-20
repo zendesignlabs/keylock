@@ -177,7 +177,7 @@ struct ContentView: View {
 
     // Stripe payment link for tips. Configure the product in Stripe with
     // "customer chooses price", suggested $5.
-    private let tipURL = URL(string: "https://buy.stripe.com/REPLACE_WITH_KEYLOCK_LINK")!
+    private let tipURL = URL(string: "https://buy.stripe.com/6oU14nbAtfBvawR76n38406")!
 
     @State private var hoveringTip = false
 
