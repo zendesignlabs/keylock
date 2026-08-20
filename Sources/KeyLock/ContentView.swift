@@ -26,12 +26,15 @@ struct ContentView: View {
                     timerPicker
                         .padding(.bottom, 12)
                     statusLine
-                        .padding(.bottom, 28)
+                        .padding(.bottom, 16)
                 } else {
                     permissionCard
                         .padding(.horizontal, 24)
-                        .padding(.bottom, 28)
+                        .padding(.bottom, 16)
                 }
+
+                colophon
+                    .padding(.bottom, 14)
             }
         }
         .animation(.spring(response: 0.45, dampingFraction: 0.85), value: locker.isLocked)
@@ -170,6 +173,32 @@ struct ContentView: View {
         Text(locker.duration == 0 ? "Locks until you tap again" : "Auto-unlocks when time is up")
             .font(.system(size: 11, weight: .medium, design: .rounded))
             .foregroundStyle(.white.opacity(0.35))
+    }
+
+    // Stripe payment link for tips. Configure the product in Stripe with
+    // "customer chooses price", suggested $5.
+    private let tipURL = URL(string: "https://buy.stripe.com/REPLACE_WITH_KEYLOCK_LINK")!
+
+    @State private var hoveringTip = false
+
+    private var colophon: some View {
+        Button {
+            NSWorkspace.shared.open(tipURL)
+        } label: {
+            HStack(spacing: 5) {
+                Image(systemName: "cup.and.saucer.fill")
+                    .font(.system(size: 10, weight: .medium))
+                Text("Buy me a coffee")
+                    .font(.system(size: 10, weight: .medium, design: .rounded))
+            }
+            .foregroundStyle(.white.opacity(hoveringTip ? 0.75 : 0.30))
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(Color.white.opacity(hoveringTip ? 0.08 : 0)))
+        }
+        .buttonStyle(.plain)
+        .onHover { hoveringTip = $0 }
+        .animation(.easeInOut(duration: 0.15), value: hoveringTip)
     }
 
     private var permissionCard: some View {
