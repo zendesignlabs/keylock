@@ -10,6 +10,7 @@ rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp .build/release/KeyLock "$APP/Contents/MacOS/KeyLock"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
+cp Resources/icon.icns "$APP/Contents/Resources/icon.icns"
 codesign --force --sign - "$APP"
 
 echo "Built $APP"
