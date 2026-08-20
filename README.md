@@ -7,6 +7,15 @@ A small, good-looking macOS utility that locks your keyboard so you can clean it
 - Blocks key presses, modifiers, and media keys via a CGEventTap; the mouse keeps working so you can always unlock
 - Requires Accessibility permission (System Settings → Privacy & Security → Accessibility)
 
+## Install
+
+Download the notarized app from the [latest release](https://github.com/zendesignlabs/keylock/releases/latest), or via Homebrew:
+
+```
+brew tap zendesignlabs/tap
+brew install --cask keylock
+```
+
 ## Build
 
 ```
